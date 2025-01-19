@@ -1,8 +1,7 @@
-import { Outlet } from "react-router-dom";
-import { ScrollRestoration } from "react-router-dom";
+import { Outlet } from "react-router";
+import { ScrollRestoration } from "react-router";
 import Header from "../header-footer/Header";
 import Footer from "../header-footer/Footer";
-import { Toaster } from "../ui/toaster";
 
 const MainLayout = () => {
   return (
@@ -13,7 +12,6 @@ const MainLayout = () => {
         <Outlet />
       </main>
       <Footer />
-      <Toaster />
     </div>
   );
 };

@@ -1,8 +1,186 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  /* Remove input buttons for number type */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  /* ...for Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+
+body {
+  @apply  text-[1rem] font-[400] leading-[36px] md:text-[1.15rem] lg:text-[1.5rem];
+}
+
+/* home page body styling */
+.homepage p,
+footer p,
+footer a {
+  @apply text-[1rem] leading-normal md:text-[1.15rem] lg:text-[1.15rem];
+}
+
+.h1 {
+  @apply text-[3rem] font-[900] leading-[56px] md:text-[4.5rem] md:leading-[80px] lg:text-[6.56rem] lg:leading-[105px];
+}
+
+.h2 {
+  @apply text-[2.25rem] font-[700] leading-[44px] lg:text-[3.125rem] lg:leading-[64px];
+}
+
+.h3 {
+  @apply text-[1.5rem] font-[400] leading-[30px] tracking-[-0.02em] lg:text-[2rem] lg:leading-[41px];
+}
+
+/* for every other pages apart from home page */
+.subheading {
+  @apply text-[2rem] font-[600] leading-[36px] lg:text-[2.25rem] lg:leading-[50px];
+}
+
+a {
+  @apply no-underline;
+}
+
+img {
+  @apply block w-full;
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-8 sm:px-4 lg:px-6 xl:px-10;
+}
+
+/* mobile Nav */
+.mobile-nav-link {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+/* Hovered mobile style */
+.mobile-nav-link:hover {
+  font: bold;
+}
+
+/* Active state mobile */
+.mobile-nav-link-active {
+  width: 100%;
+  font: bold;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+/* desktop nav style */
+.desktop-nav-link {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.desktop-nav-link:hover {
+  color: #61dd00;
+}
+
+/* Active state desktop nav*/
+.desktop-nav-link-active {
+  width: 100%;
+  color: #61dd00;
+}
+
+/* contact form */
+.contact-input {
+  width: 100%;
+  height: 44px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: black;
+  background-color: inherit;
+  border: 0.5px solid #535558;
+  border-radius: 1.375rem;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  transition:
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.contact-input::placeholder {
+  color: #8f8989;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #717272;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: normal;
+  font-size: 1rem;
+}
+
+/* footer */
+.social-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(85%);
+  transition: all 0.2s ease-in-out;
+}
 @layer base {
   :root {
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
+}
+
+/* =====  REACT PHONE NUMBER INPUT OVERRIDES */
+.PhoneInput {
+  border-radius: 4.375rem; /* Border radius to match shadcn input */
+  border: 1px solid #d1d5db; /* Light border color */
+  padding-left: 14px;
+  overflow: hidden;
+  background-color: #d3d3d4;
+}
+
+.PhoneInputCountry {
+}
+
+.PhoneInputInput {
+  outline: none;
+  margin-left: 4px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500; /* Adjust font weight */
+}
+
+/* Custom placeholder styling */
+.PhoneInputInput::placeholder {
+  color: #f87171;
+  opacity: 1;
+}
+
+/* Remove focus ring or apply custom focus styles */
+.PhoneInputInput:focus {
+  border-color: #3b82f6 !important; /* Blue border on focus */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Optional: Blue glow on focus */
+}
+
+.PhoneInputInput:hover {
+  border-color: #4b5563; /* Darker border color on hover */
 }
