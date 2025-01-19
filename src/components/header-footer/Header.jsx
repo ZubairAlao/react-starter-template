@@ -70,7 +70,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full text-white shadow-lg transition-all duration-500 max-lg:py-4`}
+      className={`fixed top-0 z-50 w-full text-black bg-white shadow-lg transition-all duration-500 max-lg:py-4 py-6`}
     >
       <div className='flex justify-between items-center container'>
         <div className="flex gap-4 justify-between items-start">
