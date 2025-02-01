@@ -9,7 +9,6 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); //scrolling header from y0 change from transparent
 
   const handleToggleButton = () => {
     setToggle(!toggle);
@@ -36,15 +35,6 @@ const Header = () => {
     };
   }, []);
 
-  // Change 50 to the scroll position where you want the header to change
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Manage body scroll lock on toggle
   useEffect(() => {
@@ -70,7 +60,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full text-black bg-white shadow-lg transition-all duration-500 max-lg:py-4 py-6`}
+      className={`fixed top-0 z-50 w-full text-black bg-white shadow-lg text-base transition-all duration-500 max-lg:py-4 py-6`}
     >
       <div className='flex justify-between items-center container'>
         <div className="flex gap-4 justify-between items-start">
@@ -82,7 +72,6 @@ const Header = () => {
             <MobileNav
               toggle={toggle}
               handleToggleButton={handleToggleButton}
-              closeMenu={closeMenu}
             />
           </div>
 

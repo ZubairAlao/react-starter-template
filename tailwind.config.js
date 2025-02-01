@@ -9,6 +9,8 @@ export default {
     extract,
   },
   theme: {
+    screens,
+    fontSize,
   	extend: {
   		backgroundImage: {},
   		fontFamily: {},
